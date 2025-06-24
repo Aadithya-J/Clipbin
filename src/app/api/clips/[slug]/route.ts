@@ -47,12 +47,16 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
       }
     }
 
-    if (clip.destroyOnView) {
+    const newViews = clip.views + 1;
+    const shouldDelete =
+      clip.destroyOnView && newViews >= (clip.isPrivate ? 1 : 2);
+
+    if (shouldDelete) {
       await prisma.clip.delete({ where: { id: clip.id } });
     } else {
       await prisma.clip.update({
         where: { id: clip.id },
-        data: { views: { increment: 1 } },
+        data: { views: newViews },
       });
     }
 
@@ -62,7 +66,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
       content: clip.content,
       isPrivate: clip.isPrivate,
       destroyOnView: clip.destroyOnView,
-      views: clip.views,
+      views: newViews,
       expiresAt: clip.expiresAt?.toISOString(),
       createdAt: clip.createdAt.toISOString(),
     });

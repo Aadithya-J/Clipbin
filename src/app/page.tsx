@@ -9,6 +9,7 @@ export default function Home() {
   const [password, setPassword] = useState("");
   const [customSlug, setCustomSlug] = useState("");
   const [expiresIn, setExpiresIn] = useState("1h");
+  const [destroyOnView, setDestroyOnView] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
@@ -36,6 +37,7 @@ export default function Home() {
           password: isPrivate ? password : undefined,
           customSlug: customSlug || undefined,
           expiresIn,
+          destroyOnView,
         }),
       });
 
@@ -215,6 +217,38 @@ export default function Home() {
                     <option value="30d">30 Days</option>
                     <option value="never">Never</option>
                   </select>
+                </div>
+
+                <div>
+                  <label className="flex items-center text-sm font-semibold text-white/90 mb-3">
+                    <span className="w-2 h-2 bg-[#A3FF12] rounded-full mr-2"></span>
+                    Destroy when read
+                  </label>
+                  <div
+                    className="flex items-center justify-between glass p-4 rounded-lg cursor-pointer transition-all duration-300 hover:bg-white/10"
+                    onClick={() => setDestroyOnView(!destroyOnView)}
+                  >
+                    <div>
+                      <label
+                        htmlFor="destroyOnView"
+                        className="text-white/90 font-medium"
+                      >
+                        View Once
+                      </label>
+                      <p className="text-xs text-white/60 mt-1">
+                        Public clips are deleted after the second view, private
+                        clips after the first.
+                      </p>
+                    </div>
+                    <input
+                      id="destroyOnView"
+                      name="destroyOnView"
+                      type="checkbox"
+                      className="h-5 w-5 text-[#00FFE0] focus:ring-[#00FFE0] border-white/30 bg-transparent rounded"
+                      checked={destroyOnView}
+                      onChange={(e) => setDestroyOnView(e.target.checked)}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
