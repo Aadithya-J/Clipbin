@@ -13,9 +13,6 @@ const nextConfig = {
     // Add any client-side environment variables here
   },
   
-  // Enable SWC minification for better performance
-  swcMinify: true,
-  
   // Configure headers for security
   async headers() {
     return [
@@ -37,6 +34,12 @@ const nextConfig = {
         ],
       },
     ];
+  },
+  
+  // Enable SWC compiler (replaces Babel)
+  compiler: {
+    // Enable styled-components support
+    styledComponents: true,
   },
 };
 
