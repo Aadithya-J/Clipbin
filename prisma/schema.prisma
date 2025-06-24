@@ -19,6 +19,7 @@ model Clip {
   expiresAt   DateTime?
   createdAt   DateTime @default(now())
   views       Int      @default(0)
+  destroyOnView Boolean @default(false)
   
   @@index([slug])
 }

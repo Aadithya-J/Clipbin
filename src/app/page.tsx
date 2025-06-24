@@ -55,9 +55,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen relative">
-      {/* Main Content */}
       <div className="max-w-5xl mx-auto px-6 py-12">
-        {/* Hero Section */}
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-[#00FFE0] via-[#9E6CFF] to-[#A3FF12] bg-clip-text text-transparent">
             ClipBin
@@ -67,9 +65,7 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Main Form Container */}
         <div className="glass-intense shadow-2xl relative overflow-hidden">
-          {/* Decorative grid overlay */}
           <div
             className="absolute inset-0 opacity-30"
             style={{
@@ -78,7 +74,6 @@ export default function Home() {
           ></div>
 
           <form onSubmit={handleSubmit} className="p-8 relative z-10">
-            {/* Code Input Area */}
             <div className="mb-8">
               <label className="flex items-center text-sm font-semibold text-white/90 mb-3">
                 <span className="w-2 h-2 bg-[#00FFE0] rounded-full mr-2"></span>
@@ -102,9 +97,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Controls Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-              {/* Privacy Settings */}
               <div className="space-y-4">
                 <label className="flex items-center text-sm font-semibold text-white/90">
                   <span className="w-2 h-2 bg-[#9E6CFF] rounded-full mr-2"></span>
@@ -178,7 +171,6 @@ export default function Home() {
                 )}
               </div>
 
-              {/* Advanced Settings */}
               <div className="space-y-4">
                 <div>
                   <label className="flex items-center text-sm font-semibold text-white/90 mb-3">
@@ -227,7 +219,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Error Display */}
             {error && (
               <div className="mb-8 p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
                 <div className="flex items-center">
@@ -236,7 +227,6 @@ export default function Home() {
               </div>
             )}
 
-            {/* Submit Button */}
             <div className="flex justify-center">
               <button
                 type="submit"
