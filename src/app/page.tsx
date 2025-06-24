@@ -60,7 +60,7 @@ export default function Home() {
       <div className="max-w-5xl mx-auto px-6 py-12">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-[#00FFE0] via-[#9E6CFF] to-[#A3FF12] bg-clip-text text-transparent">
-            ClipBin
+            Snipbox
           </h2>
           <p className="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
             Simple and secure text sharing platform
@@ -181,7 +181,7 @@ export default function Home() {
                   </label>
                   <div className="flex rounded-lg overflow-hidden border border-white/20">
                     <span className="bg-[#0D1117]/80 px-4 py-3 text-white/60 text-sm font-mono border-r border-white/20">
-                      clipbin.dev/
+                      snipbox.vercel.app/
                     </span>
                     <input
                       type="text"

@@ -15,10 +15,10 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ClipBin - Simple Text Sharing",
+  title: "Snipbox - Simple Text Sharing",
   description: "Simple and secure text sharing platform with custom privacy settings and expiration dates.",
   keywords: ["paste", "text sharing", "clipboard", "secure", "simple"],
-  authors: [{ name: "ClipBin" }],
+  authors: [{ name: "Snipbox" }],
 };
 
 export const viewport: Viewport = {
